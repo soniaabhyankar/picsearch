@@ -13,12 +13,13 @@ class App extends React.Component {
 	onSearchSubmit = async (term) => {
 		const response = await unsplash.get('/search/photos', {
 			params: {
-				query: term
+				query: term,
+				per_page: 500
 			},
 
 		});
 
-		console.log(response.data.results);
+		console.log(response.data);
 
 		this.setState({ images: response.data.results });
 	}
@@ -29,6 +30,7 @@ class App extends React.Component {
 				<h1>Picsearch</h1>
 				<SearchBar onSubmit={this.onSearchSubmit} />
 				<ImageList images={this.state.images} />
+				<footer>&copy; {new Date().getFullYear()} <a href="https://www.soniaabhyankar.com/" target="_blank" rel="noopener noreferrer">Sonia Abhyankar</a></footer>
 			</div>
 		);
 	}
