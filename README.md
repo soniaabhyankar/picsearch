@@ -1,4 +1,4 @@
-# Picsearch
+# Picsearch - https://sa-picsearch.herokuapp.com/
 
 A minimalistic web application to browse through pictures.
 
